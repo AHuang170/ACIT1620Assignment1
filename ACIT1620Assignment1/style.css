@@ -1,3 +1,19 @@
+#background{
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    margin:auto;
+    width:100vw;
+    height:100vh;
+}
+
+.backgroundImg{
+    height:100%;
+    width:100%;
+}
+
 #center{
     position:absolute;
     top:0px;
@@ -27,12 +43,9 @@
     left: 330px;
     width:240px;
     height:180px;
-    
-}
-
-#botImage{
-    height:100%;
-    width:100%;
+    border: 3px solid blue;
+    box-sizing: border-box;
+    transition: 0.15s;
     
 }
 
@@ -42,11 +55,9 @@
     left: 0px;
     width:240px;
     height:180px;
-}
-
-#leftImage{
-    height:100%;
-    width:100%;  
+    border: 3px solid white;
+    box-sizing: border-box;
+    transition: 0.15s;
 }
 
 #imgSpaceRight{
@@ -55,12 +66,9 @@
     right: 0px;
     width:240px;
     height:180px;
-}
-
-#rightImage{
-    height:100%;
-    width:100%;
-    
+    border: 3px solid white;
+    box-sizing: border-box;
+    transition: 0.15s;
 }
 
 #imgSpaceTop{
@@ -69,12 +77,15 @@
     left: 330px;
     width:240px;
     height:180px;
+    border: 3px solid white;
+    box-sizing: border-box;
+    transition: 0.15s;
 }
 
-#topImage{
+.bigImg{
     height:100%;
     width:100%;
-    
+    transition: 0.3s;
 }
 
 #controlPanelBot{
@@ -147,47 +158,18 @@
     display:inline-block;
 }
 
-#botLeftCtrl{
+.button{
     position:static;
     height:100px;
     width:100px;
     display:inline-block;
 }
 
-#botRightCtrl{
-    position:static;
-    height:100px;
-    width:100px;
-    display:inline-block;
+.buttonImg{
+    height:100%;
+    width:100%;
 }
 
-#botUpCtrl{
-    position:static;
-    height:100px;
-    width:100px;
-    display:inline-block;
-}
-
-#botDownCtrl{
-    position:static;
-    height:100px;
-    width:100px;
-    display:inline-block;
-}
-
-#botEnlargeCtrl{
-    position:static;
-    height:100px;
-    width:100px;
-    display:inline-block;
-}
-
-#botMinimizeCtrl{
-    position:static;
-    height:100px;
-    width:100px;
-    display:inline-block;
-}
 
 .panel{
     width:100%;

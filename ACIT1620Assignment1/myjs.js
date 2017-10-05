@@ -20,6 +20,8 @@ var rightImageWidth=240;
 
 var controlPanelBotCoor = 5;
 
+var borderSetting = "3px solid "
+
 /*document.getElementById("text").innerHTML = "Wow"*/
 
 var mode = 0;
@@ -80,40 +82,89 @@ document.getElementById("reset").addEventListener("click", function(){
 });
 
 document.getElementById("imgSpaceBot").addEventListener("click", function(){
-   mode = 0; 
-   document.getElementById("text").innerHTML = "[Pic: Bot]";
-   document.getElementById("text").style.width = "65px";
-   document.getElementById("panelThumb1").src = "Images/BotImg/img1.jpg"
-   document.getElementById("panelThumb2").src = "Images/BotImg/img2.jpg"
-   document.getElementById("panelThumb3").src = "Images/BotImg/img3.jpg"
+    switch(mode){
+        case 1:
+            document.getElementById("imgSpaceLeft").style.border = borderSetting + "white";
+            break;
+        case 2:
+            document.getElementById("imgSpaceRight").style.border = borderSetting + "white";
+            break;
+        case 3:
+            document.getElementById("imgSpaceTop").style.border = borderSetting + "white";
+            break;
+    }
+   
+    mode = 0; 
+    document.getElementById("imgSpaceBot").style.border = borderSetting + "blue";
+    document.getElementById("text").innerHTML = "[Pic: Bot]";
+    document.getElementById("text").style.width = "65px";
+    document.getElementById("panelThumb1").src = "Images/BotImg/img1.jpg"
+    document.getElementById("panelThumb2").src = "Images/BotImg/img2.jpg"
+    document.getElementById("panelThumb3").src = "Images/BotImg/img3.jpg"
 });
 
 document.getElementById("imgSpaceLeft").addEventListener("click", function(){
-   mode = 1; 
-   document.getElementById("text").innerHTML = "[Pic: Left]";
-   document.getElementById("text").style.width = "69px";
-   document.getElementById("panelThumb1").src = "Images/LeftImg/img1.jpg"
-   document.getElementById("panelThumb2").src = "Images/LeftImg/img2.jpg"
-   document.getElementById("panelThumb3").src = "Images/LeftImg/img3.jpg"
+    switch(mode){
+        case 0:
+            document.getElementById("imgSpaceBot").style.border = borderSetting + "white";
+            break;
+        case 2:
+            document.getElementById("imgSpaceRight").style.border = borderSetting + "white";
+            break;
+        case 3:
+            document.getElementById("imgSpaceTop").style.border = borderSetting + "white";
+            break;
+    }
+    mode = 1; 
+    document.getElementById("imgSpaceLeft").style.border = borderSetting + "blue";
+    document.getElementById("text").innerHTML = "[Pic: Left]";
+    document.getElementById("text").style.width = "69px";
+    document.getElementById("panelThumb1").src = "Images/LeftImg/img1.jpg"
+    document.getElementById("panelThumb2").src = "Images/LeftImg/img2.jpg"
+    document.getElementById("panelThumb3").src = "Images/LeftImg/img3.jpg"
 });
 
 document.getElementById("imgSpaceRight").addEventListener("click", function(){
-   mode = 2; 
-   document.getElementById("text").style.width = "77px";
-   document.getElementById("text").innerHTML = "[Pic: Right]";
+    switch(mode){
+        case 0:
+            document.getElementById("imgSpaceBot").style.border = borderSetting + "white";
+            break;
+        case 1:
+            document.getElementById("imgSpaceLeft").style.border = borderSetting + "white";
+            break;
+        case 3:
+            document.getElementById("imgSpaceTop").style.border = borderSetting + "white";
+            break;
+    }    
+    mode = 2; 
+    document.getElementById("imgSpaceRight").style.border = borderSetting + "blue";
+    document.getElementById("text").style.width = "77px";
+    document.getElementById("text").innerHTML = "[Pic: Right]";
    
-   document.getElementById("panelThumb1").src = "Images/RightImg/img1.jpg"
-   document.getElementById("panelThumb2").src = "Images/RightImg/img2.jpg"
-   document.getElementById("panelThumb3").src = "Images/RightImg/img3.jpg"
+    document.getElementById("panelThumb1").src = "Images/RightImg/img1.jpg"
+    document.getElementById("panelThumb2").src = "Images/RightImg/img2.jpg"
+    document.getElementById("panelThumb3").src = "Images/RightImg/img3.jpg"
 });
 
 document.getElementById("imgSpaceTop").addEventListener("click", function(){
-   mode = 3; 
-   document.getElementById("text").innerHTML = "[Pic: Top]";
-   document.getElementById("text").style.width = "67px";
-   document.getElementById("panelThumb1").src = "Images/TopImg/img1.jpg"
-   document.getElementById("panelThumb2").src = "Images/TopImg/img2.jpg"
-   document.getElementById("panelThumb3").src = "Images/TopImg/img3.jpg"
+    switch(mode){
+        case 0:
+            document.getElementById("imgSpaceBot").style.border = borderSetting + "white";
+            break;
+        case 1:
+            document.getElementById("imgSpaceLeft").style.border = borderSetting + "white";
+            break;
+        case 2:
+            document.getElementById("imgSpaceRight").style.border = borderSetting + "white";
+            break;
+    }    
+    mode = 3; 
+    document.getElementById("imgSpaceTop").style.border = borderSetting + "blue";
+    document.getElementById("text").innerHTML = "[Pic: Top]";
+    document.getElementById("text").style.width = "67px";
+    document.getElementById("panelThumb1").src = "Images/TopImg/img1.jpg"
+    document.getElementById("panelThumb2").src = "Images/TopImg/img2.jpg"
+    document.getElementById("panelThumb3").src = "Images/TopImg/img3.jpg"
 });
 
 document.getElementById("botImgBox1").addEventListener("click",function(){
@@ -292,26 +343,26 @@ document.getElementById("botEnlargeCtrl").addEventListener("click",function(){
 document.getElementById("botMinimizeCtrl").addEventListener("click",function(){
     switch(mode){
         case 0:
-            botImageHeight -= 3;
-            botImageWidth -= 4;
+            botImageHeight -= 3*2;
+            botImageWidth -= 4*2;
             document.getElementById("imgSpaceBot").style.height = botImageHeight + "px";
             document.getElementById("imgSpaceBot").style.width = botImageWidth + "px";
             break;
         case 1:
-            leftImageHeight -= 3;
-            leftImageWidth -= 4;
+            leftImageHeight -= 3*2;
+            leftImageWidth -= 4*2;
             document.getElementById("imgSpaceLeft").style.height = leftImageHeight + "px";
             document.getElementById("imgSpaceLeft").style.width = leftImageWidth + "px";        
             break;
         case 2:
-            rightImageHeight -= 3;
-            rightImageWidth -= 4;
+            rightImageHeight -= 3*2;
+            rightImageWidth -= 4*2;
             document.getElementById("imgSpaceRight").style.height = rightImageHeight + "px";
             document.getElementById("imgSpaceRight").style.width = rightImageWidth + "px";        
             break;
         case 3:
-            topImageHeight -= 3;
-            topImageWidth -= 4;
+            topImageHeight -= 3*2;
+            topImageWidth -= 4*2;
             document.getElementById("imgSpaceTop").style.height = topImageHeight + "px";
             document.getElementById("imgSpaceTop").style.width = topImageWidth + "px";
             break;
